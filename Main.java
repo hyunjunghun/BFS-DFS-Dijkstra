@@ -12,10 +12,10 @@ public class Main {
 			gl.graphLoad2();
 		}
 		catch (FileNotFoundException e) {
-			System.out.println("돌아가");
+			System.out.println("오류: 파일을 찾을 수 없습니다. (" + e.getMessage() + ")");		
 		}
 		catch (IOException e) {
-			System.out.println("돌아가");
+			System.out.println("오류: 파일 입출력 중 문제가 발생했습니다. (" + e.getMessage() + ")");		
 		}
 		
 		
@@ -50,5 +50,6 @@ public class Main {
 	}
 
 }
+
 
 
