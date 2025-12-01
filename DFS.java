@@ -1,9 +1,12 @@
 package DM_project1;
 
+import java.util.ArrayList;
+
 public class DFS {
     int[][] graph;
     boolean[] visited;
     int n;
+    ArrayList<Integer> order = new ArrayList<>();
 
     public DFS(int[][] graph) {
         this.graph = graph;
@@ -20,12 +23,12 @@ public class DFS {
             }
         }
 
-        System.out.println();
+        printOrder();   // <-- only the result line
     }
 
     private void dfs(int v) {
         visited[v] = true;
-        System.out.print((v + 1) + " ");
+        order.add(v + 1);
 
         for (int i = 0; i < n; i++) {
             if (graph[v][i] != 0 && !visited[i]) {
@@ -33,6 +36,14 @@ public class DFS {
             }
         }
     }
+
+    private void printOrder() {
+        for (int i = 0; i < order.size(); i++) {
+            System.out.print(order.get(i));
+            if (i != order.size() - 1) {
+                System.out.print(" – ");
+            }
+        }
+        System.out.println();
+    }
 }
-
-
