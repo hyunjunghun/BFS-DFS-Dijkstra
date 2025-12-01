@@ -23,7 +23,7 @@ public class DFS {
             }
         }
 
-        printOrder();   // <-- only the result line
+        printOrder();   
     }
 
     private void dfs(int v) {
@@ -47,3 +47,4 @@ public class DFS {
         System.out.println();
     }
 }
+
