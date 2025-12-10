@@ -20,7 +20,7 @@ public class Main {
 		
 		
 		//DFS, BFS
-		System.out.println("1. 그래프 탐방 수행 결과");
+		System.out.println("1. 그래프 탐방 수행 결과\n");
 		for (int j=0; j<gl.graphs1.size(); j++) {
 			Graph g = gl.graphs1.get(j);
 			DFS d = new DFS(g.graph);
@@ -31,11 +31,11 @@ public class Main {
 			d.DFSOutput();
 			System.out.println("너비 우선 탐색");
 			b.BFSOutput();
-			System.out.println("============================");			
+			System.out.println("============================\n");			
 		}
 		
 		//Dijkstra
-		System.out.println("2. 최단 경로 구하기 수행 결과");
+		System.out.println("2. 최단 경로 구하기 수행 결과\n");
 		for (int j=0; j<gl.graphs2.size(); j++) {
 			Graph g = gl.graphs2.get(j);
 			Dijkstra d = new Dijkstra(g.graph);
@@ -43,13 +43,14 @@ public class Main {
 			System.out.println("----------------------------");
 			System.out.println("시작점 : 1");
 			d.DijkstraOutput();
-			System.out.println("============================");			
+			System.out.println("============================\n");			
 		}
 		
 		
 	}
 
 }
+
 
 
 
