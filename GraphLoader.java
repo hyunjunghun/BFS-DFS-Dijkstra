@@ -19,6 +19,12 @@ public class GraphLoader {
 		
 		while ((line=br.readLine()) != null) {
 			int n = Integer.valueOf(line);
+			
+			if (n>100) {
+				System.out.println("err:그래프당 정점 최대 개수는 100");
+				System.exit(1);
+			}
+			
 			graphs1.add(new Graph(n));
 			Graph g = graphs1.get(num);
 			num++;
@@ -45,6 +51,12 @@ public class GraphLoader {
 		
 		while ((line=br.readLine()) != null) {
 			int n = Integer.valueOf(line);
+			
+			if (n>100) {
+				System.out.println("err:그래프당 정점 최대 개수는 100");
+				System.exit(1);
+			}
+			
 			graphs2.add(new Graph(n));
 			Graph g = graphs2.get(num);
 			num++;
@@ -55,7 +67,21 @@ public class GraphLoader {
 				int v1 = Integer.valueOf(st.nextToken());
 				while (st.hasMoreTokens()) {
 					int v2 = Integer.valueOf(st.nextToken());
-					int w = Integer.valueOf(st.nextToken());
+					
+					int w = -1;
+					try { 
+						w = Integer.valueOf(st.nextToken()); 
+					}
+					catch (NumberFormatException e) {
+						System.out.println("err:정점간 거리는 0보다 큰 정수 값");
+						System.exit(1);
+					}
+					
+					if (w<1) {
+						System.out.println("err:정점간 거리는 0보다 큰 정수 값");
+						System.exit(1);
+					}
+					
 					g.graphEdge(v1-1,v2-1, w);
 				}
 			}		
