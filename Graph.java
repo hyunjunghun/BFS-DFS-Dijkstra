@@ -5,7 +5,6 @@ public class Graph {
 	int[][] graph;
 	
 	public Graph(int n) {
-		if (n>100) System.out.println("조건 위배");
 		this.n = n;
 		this.graph = new int[n][n];
 	}
@@ -15,7 +14,6 @@ public class Graph {
 	}
 	
 	public void graphEdge(int v1, int v2, int w) {
-		if (w<1) System.out.println("조건 위배");
 		graph[v1][v2] = w;
 	}
 }
